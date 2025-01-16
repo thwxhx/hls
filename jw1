@@ -1,0 +1,42 @@
+<div id="vid"></div>
+
+<script src="https://cdn.jsdelivr.net/clappr/latest/clappr.min.js" type="text/javascript"></script>
+<script src="https://cdn.jsdelivr.net/clappr.level-selector/latest/level-selector.min.js" type="text/javascript"></script>
+
+<script>
+    var urlParams = new URLSearchParams(window.location.search);
+    var videoLink = urlParams.get('video');
+
+    if (videoLink) {
+        var player = new Clappr.Player({
+            source: "https://vivo.b4xsports.online/?video=https://40.koora-live.video/hls/1/stream.m3u8",  // Use the dynamic videoLink from the URL
+            mimeType: "application/x-mpegURL",
+            autoPlay: true,
+            height: "100%",
+            width: "100%",
+            watermark: "https://i.ibb.co/qCJmCXF/20221219-204952.png", // Watermark image URL
+            watermarkLink: "https://chat.whatsapp.com/LedSvF9QeU9991e4l6A1R7", // Watermark clickable link
+            position: 'top-right',
+            plugins: [LevelSelector],  // Level Selector plugin
+            parentId: "#vid"  // Container for the player
+        });
+    } else {
+        console.error('Video link parameter "video" is missing in the URL.');
+    }
+</script>
+
+<style>
+    #vid {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
+</style>
+
+<a href="javascript:document.location.reload();" onclick="window.open('https://chat.whatsapp.com/LedSvF9QeU9991e4l6A1R7'); return false;" target="_blank">
+    <span style="position:absolute;z-index: 100; top:5px; left:5px; height:20px; width:100px; color:#ccc; border:2px solid #ccc;padding:1px 0;border-radius:2px; text-align:center">
+        <i class="fa fa-refresh"></i> Join US
+    </span>
+</a>

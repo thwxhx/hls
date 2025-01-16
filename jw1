@@ -9,7 +9,7 @@
 
     if (videoLink) {
         var player = new Clappr.Player({
-            source: "https://vivo.b4xsports.online/?video=https://40.koora-live.video/hls/1/stream.m3u8",  // Use the dynamic videoLink from the URL
+            source: video,  // Use the dynamic videoLink from the URL
             mimeType: "application/x-mpegURL",
             autoPlay: true,
             height: "100%",
